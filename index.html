@@ -1356,7 +1356,7 @@
 
     <script>
         // Datos de viáticos
-        const viaticosData = [
+        const viaticosTecnicosData = [
             {p:"SIBERIA", k:38, i:25000, rg:25000, d:["","X","","X",""]},
             {p:"LA CALERA", k:56, i:35000, rg:35000, d:["X","","","","X"]},
             {p:"SIBATÉ", k:58, i:30000, rg:30000, d:["","","","X",""]},
@@ -1485,7 +1485,7 @@
             }).format(val);
         };
 
-        function renderViaticos(list) {
+        function renderViaticosTecnicos(list) {
             const body = document.getElementById('viaticos-body');
             if (!body) return;
             
@@ -1528,13 +1528,15 @@
             });
         }
 
-        function filterViaticos() {
-            const query = document.getElementById('searchViaticos').value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-            const filtered = viaticosData.filter(item => 
-                item.p.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query)
-            );
-            renderViaticos(filtered);
-        }
+       function filterViaticos() {
+    const query = document.getElementById('searchViaticos').value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // Cambiamos viaticosData por viaticosTecnicosData
+    const filtered = viaticosTecnicosData.filter(item => 
+        item.p.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query)
+    );
+    // Cambiamos renderViaticos por renderViaticosTecnicos
+    renderViaticosTecnicos(filtered);
+}
 
         function switchTab(tab) {
             const tabGarantias = document.getElementById('tab-garantias');
@@ -1570,7 +1572,7 @@
                 btnViaticos.classList.add('tab-active');
                 btnViaticos.classList.remove('tab-inactive');
                 // Renderizar viáticos cuando se abre la pestaña
-                renderViaticos(viaticosData);
+                renderViaticos(viaticosTecnicosData);
             }
             
             // Scroll suave al inicio
