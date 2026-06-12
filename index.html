@@ -138,36 +138,10 @@
             .inspeccion-title { font-size: 1.4rem; }
             .inspeccion-qr-wrapper img { width: 180px; height: 180px; }
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            background-attachment: fixed;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        
-        .bg-brand-gradient { 
-            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .bg-brand-gradient::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0.1;
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(255,255,255,.2) 30px, rgba(255,255,255,.2) 60px);
-        }
-        
-        .tab-active { 
+
+
+        /* ── TARIFAS TÉCNICOS (Estatuto 2026) ─────────────────── */
+        .tec-tab-active { 
             background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
             color: white !important;
             font-weight: 800;
@@ -177,7 +151,7 @@
             border: 2px solid rgba(14, 165, 233, 0.3);
         }
         
-        .tab-inactive {
+        .tec-tab-inactive {
             color: #64748b;
             background: transparent;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -185,13 +159,13 @@
             border: 2px solid transparent;
         }
         
-        .tab-inactive:hover {
+        .tec-tab-inactive:hover {
             background: #f1f5f9;
             color: #0ea5e9;
             transform: translateY(-1px);
         }
         
-        .table-container { 
+        .tec-table-container { 
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             border-radius: 20px;
@@ -199,7 +173,7 @@
             background: white;
         }
         
-        .table-header { 
+        .tec-table-header { 
             background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
             color: white; 
             text-transform: uppercase; 
@@ -208,46 +182,46 @@
             font-weight: 800;
         }
         
-        .badge-a {
+        .tec-badge-a {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
             border-radius: 12px;
         }
         
-        .badge-b {
+        .tec-badge-b {
             background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
             box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
             border-radius: 12px;
         }
         
-        .card-hover {
+        .tec-card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .card-hover:hover {
+        .tec-card-hover:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
         }
         
-        .table-row-hover {
+        .tec-table-row-hover {
             transition: all 0.2s ease;
             border-bottom: 1px solid #f1f5f9;
         }
         
-        .table-row-hover:hover {
+        .tec-table-row-hover:hover {
             background: linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 100%);
             transform: scale(1.005);
         }
         
-        .table-row-hover:last-child {
+        .tec-table-row-hover:last-child {
             border-bottom: none;
         }
         
-        .pulse-animation {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        .tec-pulse-animation {
+            animation: tecPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
         
-        @keyframes pulse {
+        @keyframes tecPulse {
             0%, 100% { 
                 opacity: 1;
                 box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
@@ -258,7 +232,7 @@
             }
         }
         
-        .glass-effect {
+        .tec-glass-effect {
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -266,12 +240,12 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
         
-        .section-title {
+        .tec-section-title {
             position: relative;
             padding-left: 24px;
         }
         
-        .section-title::before {
+        .tec-section-title::before {
             content: '';
             position: absolute;
             left: 0;
@@ -282,84 +256,7 @@
             background: linear-gradient(180deg, #0ea5e9 0%, #8b5cf6 100%);
             border-radius: 999px;
         }
-        
-        /* Mejoras para tablas en móviles */
-        @media (max-width: 768px) {
-            .table-container {
-                font-size: 0.75rem;
-            }
-            
-            .table-container table {
-                min-width: 100%;
-            }
-            
-            .table-header {
-                font-size: 0.65rem;
-            }
-            
-            .badge-a, .badge-b {
-                font-size: 0.65rem;
-                padding: 0.4rem 0.8rem;
-            }
-            
-            .glass-effect {
-                padding: 1.5rem !important;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .table-container {
-                font-size: 0.7rem;
-            }
-            
-            .table-header {
-                font-size: 0.6rem;
-                letter-spacing: 0.05em;
-            }
-            
-            .glass-effect {
-                padding: 1.25rem !important;
-                border-radius: 1.5rem !important;
-            }
-        }
-        
-        /* Scrollbar personalizada */
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #0ea5e9 0%, #8b5cf6 100%);
-            border-radius: 10px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: #0284c7;
-        }
-        
-        /* Animaciones de entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .animate-fade-in {
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-    
-</style>
+    </style>
 </head>
 <body class="min-h-screen">
 
@@ -416,7 +313,7 @@
             <button onclick="showMainSection('filtros')" id="nav-filtros" class="btn-nav">Catálogo de Filtros</button>
             <button onclick="showMainSection('pagos')" id="nav-pagos" class="btn-nav">Medios de Pago</button>
             <button onclick="showMainSection('inspeccion')" id="nav-inspeccion" class="btn-nav">Inspección Vehículos</button>
-	    <button onclick="showMainSection('tecnicos')" id="nav-tecnicos" class="btn-nav">Portal de Técnicos</button>
+            <button onclick="showMainSection('tarifas_tecnicos')" id="nav-tarifas_tecnicos" class="btn-nav">Tarifas Técnicos</button>
         </nav>
     </div>
 </header>
@@ -443,13 +340,13 @@
     <!-- Sección de Tarifas -->
     <section id="section-tarifario" class="hidden">
         <div id="tab-container" class="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar" role="tablist">
-            <button onclick="switchTabTecnicos('mantenimientos')" id="tab-mantenimientos" class="btn-tab active" role="tab">Mantenimientos</button>
-            <button onclick="switchTabTecnicos('inst_general')" id="tab-inst_general" class="btn-tab" role="tab">Instalación General</button>
-            <button onclick="switchTabTecnicos('inst_kit')" id="tab-inst_kit" class="btn-tab" role="tab">Instalación con Kit</button>
-            <button onclick="switchTabTecnicos('inst_tv')" id="tab-inst_tv" class="btn-tab" role="tab">Instalación Televisores</button>
-            <button onclick="switchTabTecnicos('diag')" id="tab-diag" class="btn-tab" role="tab">Diagnósticos</button>
-            <button onclick="switchTabTecnicos('mo_general')" id="tab-mo_general" class="btn-tab" role="tab">Mano de Obra</button>
-            <button onclick="switchTabTecnicos('mo_compresor')" id="tab-mo_compresor" class="btn-tab" role="tab">Cambio de Compresor</button>
+            <button onclick="switchTab('mantenimientos')" id="tab-mantenimientos" class="btn-tab active" role="tab">Mantenimientos</button>
+            <button onclick="switchTab('inst_general')" id="tab-inst_general" class="btn-tab" role="tab">Instalación General</button>
+            <button onclick="switchTab('inst_kit')" id="tab-inst_kit" class="btn-tab" role="tab">Instalación con Kit</button>
+            <button onclick="switchTab('inst_tv')" id="tab-inst_tv" class="btn-tab" role="tab">Instalación Televisores</button>
+            <button onclick="switchTab('diag')" id="tab-diag" class="btn-tab" role="tab">Diagnósticos</button>
+            <button onclick="switchTab('mo_general')" id="tab-mo_general" class="btn-tab" role="tab">Mano de Obra</button>
+            <button onclick="switchTab('mo_compresor')" id="tab-mo_compresor" class="btn-tab" role="tab">Cambio de Compresor</button>
         </div>
         <div id="tarifas-render"></div>
     </section>
@@ -648,68 +545,52 @@
             </div>
         </div>
     </section>
-<section id="section-tecnicos" class="hidden">
- <!-- Header Mejorado -->
-    <header class="bg-brand-gradient text-white py-10 px-6 text-center shadow-2xl relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
-        <div class="relative z-10">
-            <div class="inline-block mb-3">
-                <span class="text-6xl">⚡</span>
-            </div>
-            <h1 class="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-2">
-                Electro Service S.A.
-            </h1>
-            <p class="text-sm font-medium opacity-90 uppercase tracking-widest">
-                Estatuto Tarifas 2026
-            </p>
-            <div class="mt-4 text-xs opacity-75">
-                📋 Guía Oficial para Técnicos
-            </div>
-        </div>
-    </header>
 
-    <!-- Navegación Mejorada -->
-    <nav class="glass-effect sticky top-0 z-50 shadow-lg">
+
+    <!-- NUEVA: Tarifas para Técnicos (Estatuto 2026) -->
+    <section id="section-tarifas_tecnicos" class="hidden">
+        <div class="flex items-center gap-2 mb-6">
+            <span class="w-2 h-6 bg-[var(--brand-blue)] rounded-full"></span>
+            <h2 class="text-2xl font-black uppercase text-slate-700">Tarifas Técnicos · Estatuto 2026</h2>
+        </div>
+        <div class="info-note mb-6">📋 Guía Oficial para Técnicos: Garantías, Servicios Fuera de Garantía (OOW) y Viáticos Cundinamarca.</div>
+    <nav class="tec-glass-effect shadow-lg rounded-2xl mb-6">
         <div class="max-w-7xl mx-auto flex gap-2 p-2">
             <button 
-                onclick="switchTab('garantias')" 
-                id="btn-garantias" 
-                class="flex-1 py-4 px-4 text-sm font-bold uppercase tracking-tight tab-active transition-all rounded-xl"
+                onclick="switchTabTec('garantias')" 
+                id="btn-garantias-tec" 
+                class="flex-1 py-4 px-4 text-sm font-bold uppercase tracking-tight tec-tab-active transition-all rounded-xl"
             >
                 <span class="block text-xs opacity-70 mb-1">Sección</span>
                 ✓ Garantías
             </button>
             <button 
-                onclick="switchTab('oow')" 
-                id="btn-oow" 
-                class="flex-1 py-4 px-4 text-sm font-bold uppercase tracking-tight tab-inactive transition-all rounded-xl"
+                onclick="switchTabTec('oow')" 
+                id="btn-oow-tec" 
+                class="flex-1 py-4 px-4 text-sm font-bold uppercase tracking-tight tec-tab-inactive transition-all rounded-xl"
             >
                 <span class="block text-xs opacity-70 mb-1">Sección</span>
                 💰 Fuera de Garantía (OOW)
             </button>
             <button 
-                onclick="switchTab('viaticos')" 
-                id="btn-viaticos" 
-                class="flex-1 py-4 px-4 text-sm font-bold uppercase tracking-tight tab-inactive transition-all rounded-xl"
+                onclick="switchTabTec('viaticos')" 
+                id="btn-viaticos-tec" 
+                class="flex-1 py-4 px-4 text-sm font-bold uppercase tracking-tight tec-tab-inactive transition-all rounded-xl"
             >
                 <span class="block text-xs opacity-70 mb-1">Sección</span>
                 🚗 Viáticos Cundinamarca
             </button>
         </div>
     </nav>
-
-    <main class="max-w-7xl mx-auto px-4 mt-8">
+        <div>
 
         <!-- TAB GARANTÍAS -->
-        <div id="tab-garantias" class="space-y-12">
+        <div id="tab-garantias-tec" class="space-y-12">
             
             <!-- Requisitos Tarifa A - Mejorado -->
-            <section class="glass-effect rounded-3xl p-8 border-2 border-amber-300 shadow-2xl card-hover">
+            <section class="tec-glass-effect rounded-3xl p-8 border-2 border-amber-300 shadow-2xl tec-card-hover">
                 <div class="flex items-start gap-4 mb-6">
-                    <div class="bg-amber-500 text-white rounded-2xl p-4 text-4xl pulse-animation">
+                    <div class="bg-amber-500 text-white rounded-2xl p-4 text-4xl tec-pulse-animation">
                         ⚠️
                     </div>
                     <div>
@@ -801,9 +682,9 @@
             </section>
 
             <!-- TARIFA A -->
-            <section class="glass-effect rounded-3xl p-8 shadow-2xl">
+            <section class="tec-glass-effect rounded-3xl p-8 shadow-2xl">
                 <div class="flex items-center gap-4 mb-8 flex-wrap">
-                    <span class="badge-a text-white text-sm font-black px-6 py-3 rounded-2xl">
+                    <span class="tec-badge-a text-white text-sm font-black px-6 py-3 rounded-2xl">
                         ⭐ TARIFA A
                     </span>
                     <h2 class="text-3xl font-black text-slate-800 uppercase tracking-tighter">
@@ -817,14 +698,14 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Línea Marrón Tarifa A -->
                     <div class="lg:col-span-2">
-                        <div class="section-title">
+                        <div class="tec-section-title">
                             <h3 class="text-base font-black text-slate-800 mb-4 uppercase tracking-widest">
                                 📺 Línea Marrón
                             </h3>
                         </div>
-                        <div class="table-container bg-white">
+                        <div class="tec-table-container bg-white">
                             <table class="w-full text-left text-xs">
-                                <thead class="table-header">
+                                <thead class="tec-table-header">
                                     <tr>
                                         <th class="px-4 py-4 text-left">Tipo Servicio</th>
                                         <th class="px-3 py-4 text-center">≤ 50"</th>
@@ -834,60 +715,60 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Ajuste sin parte</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$22,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$29,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$32,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$10,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de producto</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$20,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$25,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$30,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$10,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de partes</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$22,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$29,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$32,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$10,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">No Falla</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$17,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$17,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$17,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$10,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de Display</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$35,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$50,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$60,000</td>
                                         <td class="px-3 py-3 text-center font-black text-slate-400">-</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Diagnóstico Display</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$19,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$25,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$30,000</td>
                                         <td class="px-3 py-3 text-center font-black text-slate-400">-</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Actualización Software</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$20,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$20,000</td>
                                         <td class="px-3 py-3 text-center font-black text-blue-600">$20,000</td>
                                         <td class="px-3 py-3 text-center font-black text-slate-400">-</td>
                                     </tr>
-                                    <tr class="table-row-hover bg-amber-50">
+                                    <tr class="tec-table-row-hover bg-amber-50">
                                         <td class="px-4 py-3 font-bold text-amber-900">Reingreso de otro técnico 1 visita</td>
                                         <td colspan="4" class="px-3 py-3 text-center font-black text-amber-700">$30,000</td>
                                     </tr>
-                                    <tr class="table-row-hover bg-amber-50">
+                                    <tr class="tec-table-row-hover bg-amber-50">
                                         <td class="px-4 py-3 font-bold text-amber-900">Reingreso de otro técnico 2 visitas</td>
                                         <td colspan="4" class="px-3 py-3 text-center font-black text-amber-700">$70,000</td>
                                     </tr>
@@ -898,49 +779,49 @@
                     
                     <!-- Línea Blanca Tarifa A -->
                     <div>
-                        <div class="section-title">
+                        <div class="tec-section-title">
                             <h3 class="text-base font-black text-slate-800 mb-4 uppercase tracking-widest">
                                 🧺 Línea Blanca
                             </h3>
                         </div>
-                        <div class="table-container bg-white">
+                        <div class="tec-table-container bg-white">
                             <table class="w-full text-left text-xs">
-                                <thead class="table-header">
+                                <thead class="tec-table-header">
                                     <tr>
                                         <th class="px-4 py-4 text-left">Tipo Servicio</th>
                                         <th class="px-4 py-4 text-center">Valor</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Ajuste sin parte</td>
                                         <td class="px-4 py-3 text-center font-black text-blue-600">$25,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de producto</td>
                                         <td class="px-4 py-3 text-center font-black text-blue-600">$20,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de partes</td>
                                         <td class="px-4 py-3 text-center font-black text-blue-600">$25,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">No Falla</td>
                                         <td class="px-4 py-3 text-center font-black text-blue-600">$17,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Lavado 2 horas</td>
                                         <td class="px-4 py-3 text-center font-black text-blue-600">$30,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Tina y Araña</td>
                                         <td class="px-4 py-3 text-center font-black text-blue-600">$35,000</td>
                                     </tr>
-                                    <tr class="table-row-hover bg-amber-50">
+                                    <tr class="tec-table-row-hover bg-amber-50">
                                         <td class="px-4 py-3 font-bold text-amber-900">Reingreso de otro técnico 1 visita</td>
                                         <td class="px-4 py-3 text-center font-black text-amber-700">$30,000</td>
                                     </tr>
-                                    <tr class="table-row-hover bg-amber-50">
+                                    <tr class="tec-table-row-hover bg-amber-50">
                                         <td class="px-4 py-3 font-bold text-amber-900">Reingreso de otro técnico 2 visitas</td>
                                         <td class="px-4 py-3 text-center font-black text-amber-700">$80,000</td>
                                     </tr>
@@ -952,9 +833,9 @@
             </section>
 
             <!-- TARIFA B -->
-            <section class="glass-effect rounded-3xl p-8 shadow-2xl opacity-90">
+            <section class="tec-glass-effect rounded-3xl p-8 shadow-2xl opacity-90">
                 <div class="flex items-center gap-4 mb-8 flex-wrap">
-                    <span class="badge-b text-white text-sm font-black px-6 py-3 rounded-2xl">
+                    <span class="tec-badge-b text-white text-sm font-black px-6 py-3 rounded-2xl">
                         ⚠️ TARIFA B
                     </span>
                     <h2 class="text-3xl font-black text-slate-800 uppercase tracking-tighter">
@@ -968,14 +849,14 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <!-- Línea Marrón Tarifa B -->
                     <div class="lg:col-span-2">
-                        <div class="section-title">
+                        <div class="tec-section-title">
                             <h3 class="text-base font-black text-slate-800 mb-4 uppercase tracking-widest">
                                 📺 Línea Marrón
                             </h3>
                         </div>
-                        <div class="table-container bg-white">
+                        <div class="tec-table-container bg-white">
                             <table class="w-full text-left text-xs">
-                                <thead class="table-header bg-red-600">
+                                <thead class="tec-table-header bg-red-600">
                                     <tr>
                                         <th class="px-4 py-4 text-left">Tipo de Servicio</th>
                                         <th class="px-3 py-4 text-center">≤ 50"</th>
@@ -985,42 +866,42 @@
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Ajuste sin parte</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$20,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$25,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$30,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$8,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio producto</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$14,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$16,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$17,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$8,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de partes</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$21,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$26,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$30,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$8,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">No Falla</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$10,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$10,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$10,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$8,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio Display</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$32,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$42,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$56,000</td>
                                         <td class="px-3 py-3 text-center font-black text-slate-400">-</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Diag. Display</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$18,000</td>
                                         <td class="px-3 py-3 text-center font-black text-red-600">$22,000</td>
@@ -1034,37 +915,37 @@
                     
                     <!-- Línea Blanca Tarifa B -->
                     <div>
-                        <div class="section-title">
+                        <div class="tec-section-title">
                             <h3 class="text-base font-black text-slate-800 mb-4 uppercase tracking-widest">
                                 🧺 Línea Blanca
                             </h3>
                         </div>
-                        <div class="table-container bg-white">
+                        <div class="tec-table-container bg-white">
                             <table class="w-full text-left text-xs">
-                                <thead class="table-header bg-red-600">
+                                <thead class="tec-table-header bg-red-600">
                                     <tr>
                                         <th class="px-4 py-4 text-left">Tipo de Servicio</th>
                                         <th class="px-4 py-4 text-center">Valor</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-100">
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Ajuste sin parte</td>
                                         <td class="px-4 py-3 text-center font-black text-red-600">$17,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de producto</td>
                                         <td class="px-4 py-3 text-center font-black text-red-600">$17,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Cambio de partes</td>
                                         <td class="px-4 py-3 text-center font-black text-red-600">$20,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">No Falla</td>
                                         <td class="px-4 py-3 text-center font-black text-red-600">$10,000</td>
                                     </tr>
-                                    <tr class="table-row-hover">
+                                    <tr class="tec-table-row-hover">
                                         <td class="px-4 py-3 font-bold text-slate-700">Lavado 2 horas</td>
                                         <td class="px-4 py-3 text-center font-black text-red-600">$30,000</td>
                                     </tr>
@@ -1077,8 +958,8 @@
         </div>
 
         <!-- TAB OOW (FUERA DE GARANTÍA) -->
-        <div id="tab-oow" class="hidden space-y-8">
-            <section class="glass-effect rounded-3xl p-10 shadow-2xl">
+        <div id="tab-oow-tec" class="hidden space-y-8">
+            <section class="tec-glass-effect rounded-3xl p-10 shadow-2xl">
                 <div class="text-center mb-10">
                     <div class="inline-block mb-4">
                         <span class="text-6xl">💰</span>
@@ -1093,7 +974,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <!-- Nivel A: 45% -->
-                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-4 border-green-500 rounded-3xl p-8 relative overflow-hidden shadow-2xl card-hover">
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 border-4 border-green-500 rounded-3xl p-8 relative overflow-hidden shadow-2xl tec-card-hover">
                         <!-- Badge Recomendado -->
                         <div class="absolute -top-1 -right-1">
                             <div class="bg-green-500 text-white text-[9px] font-black px-12 py-1.5 rotate-45 translate-x-6 translate-y-4 shadow-lg">
@@ -1177,7 +1058,7 @@
                     </div>
 
                     <!-- Nivel B: 30% -->
-                    <div class="bg-gradient-to-br from-red-50 to-rose-50 border-4 border-red-600 rounded-3xl p-8 shadow-2xl card-hover">
+                    <div class="bg-gradient-to-br from-red-50 to-rose-50 border-4 border-red-600 rounded-3xl p-8 shadow-2xl tec-card-hover">
                         <div class="mb-6">
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="bg-red-600 text-white rounded-2xl p-3 text-3xl">
@@ -1232,8 +1113,8 @@
         </div>
 
         <!-- TAB VIÁTICOS CUNDINAMARCA -->
-        <div id="tab-viaticos" class="hidden space-y-8">
-            <section class="glass-effect rounded-3xl p-10 shadow-2xl">
+        <div id="tab-viaticos-tec" class="hidden space-y-8">
+            <section class="tec-glass-effect rounded-3xl p-10 shadow-2xl">
                 <div class="text-center mb-8">
                     <div class="inline-block mb-4">
                         <span class="text-6xl">🚗</span>
@@ -1249,8 +1130,8 @@
                     <div class="max-w-xl mx-auto">
                         <input 
                             type="text" 
-                            id="searchViaticos" 
-                            onkeyup="filterViaticos()" 
+                            id="searchViaticosTec" 
+                            onkeyup="filterViaticosTec()" 
                             placeholder="🔍 Buscar población (ej: Chía, Zipaquirá, Fusagasugá)..." 
                             class="w-full p-4 bg-white border-2 border-slate-200 rounded-2xl outline-none focus:border-purple-500 shadow-lg transition-all text-base"
                         >
@@ -1291,10 +1172,10 @@
                 </div>
 
                 <!-- Tabla de Viáticos -->
-                <div class="table-container bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="tec-table-container bg-white rounded-2xl shadow-xl overflow-hidden">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left text-sm">
-                            <thead class="table-header">
+                            <thead class="tec-table-header">
                                 <tr>
                                     <th class="px-6 py-4 text-left font-black">Población</th>
                                     <th class="px-4 py-4 text-center font-black">KM</th>
@@ -1307,7 +1188,7 @@
                                     <th class="px-3 py-4 text-center font-black">V</th>
                                 </tr>
                             </thead>
-                            <tbody id="viaticos-body" class="divide-y divide-slate-100">
+                            <tbody id="viaticos-body-tec" class="divide-y divide-slate-100">
                                 <!-- Se llenará con JavaScript -->
                             </tbody>
                         </table>
@@ -1340,249 +1221,9 @@
             </section>
         </div>
 
-    </main>
-
-    <!-- Footer -->
-    <footer class="mt-16 glass-effect py-8">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-sm font-bold text-slate-700 mb-2">
-                © 2026 Electro Service S.A.
-            </p>
-            <p class="text-xs text-slate-500">
-                Estatuto Oficial de Tarifas para Técnicos
-            </p>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Datos de viáticos
-        const viaticosTecnicosData = [
-            {p:"SIBERIA", k:38, i:25000, rg:25000, d:["","X","","X",""]},
-            {p:"LA CALERA", k:56, i:35000, rg:35000, d:["X","","","","X"]},
-            {p:"SIBATÉ", k:58, i:30000, rg:30000, d:["","","","X",""]},
-            {p:"MOSQUERA", k:58, i:30000, rg:30000, d:["X","X","X","X","X"]},
-            {p:"GUAYMARAL", k:62, i:30000, rg:30000, d:["","","","",""]},
-            {p:"ARRAYANES", k:62, i:30000, rg:30000, d:["","","X","","X"]},
-            {p:"FUNZA", k:62, i:30000, rg:30000, d:["X","X","X","X","X"]},
-            {p:"MADRID", k:68, i:30000, rg:30000, d:["X","X","X","X","X"]},
-            {p:"COTA", k:70, i:30000, rg:30000, d:["X","","X","","X"]},
-            {p:"CHIPAQUE", k:70, i:35000, rg:35000, d:"COORD"},
-            {p:"CHÍA", k:74, i:30000, rg:30000, d:["X","X","X","X","X"]},
-            {p:"EL ROSAL", k:78, i:40000, rg:40000, d:["","X","","X",""]},
-            {p:"TENJO", k:82, i:40000, rg:40000, d:["","X","","X",""]},
-            {p:"BOJACÁ", k:84, i:40000, rg:40000, d:["X","","X","","X"]},
-            {p:"CAJICÁ", k:86, i:40000, rg:40000, d:["X","X","X","X","X"]},
-            {p:"TABIO", k:88, i:45000, rg:45000, d:["","X","","X",""]},
-            {p:"SAN ANTONIO TEQUENDAMA", k:88, i:45000, rg:45000, d:["","","","X",""]},
-            {p:"GRANADA CUNDI", k:88, i:50000, rg:50000, d:["","","","X",""]},
-            {p:"BRICEÑO", k:92, i:45000, rg:45000, d:["X","","","","X"]},
-            {p:"FACATATIVÁ", k:92, i:40000, rg:40000, d:["X","X","X","X","X"]},
-            {p:"SUBACHOQUE", k:96, i:45000, rg:45000, d:["","X","","",""]},
-            {p:"CHOACHÍ", k:98, i:58000, rg:58000, d:"COORD"},
-            {p:"CÁQUEZA", k:104, i:62000, rg:62000, d:"COORD"},
-            {p:"TOCANCIPÁ", k:105, i:50000, rg:50000, d:["X","X","X","X","X"]},
-            {p:"ZIPACÓN", k:105, i:50000, rg:50000, d:["","","","X",""]},
-            {p:"SOPÓ", k:108, i:55000, rg:55000, d:["X","","","","X"]},
-            {p:"ZIPAQUIRÁ", k:110, i:50000, rg:50000, d:["X","X","X","X","X"]},
-            {p:"SUBIA", k:110, i:50000, rg:50000, d:["","","","X",""]},
-            {p:"UNE", k:114, i:65000, rg:65000, d:"COORD"},
-            {p:"GACHANCIPÁ", k:116, i:60000, rg:60000, d:["","X","","X",""]},
-            {p:"SAN FRANCISCO", k:118, i:60000, rg:60000, d:["","X","","",""]},
-            {p:"UBAQUE", k:122, i:70000, rg:70000, d:"COORD"},
-            {p:"TENA", k:122, i:60000, rg:60000, d:["","","","X",""]},
-            {p:"SILVANIA", k:122, i:50000, rg:50000, d:["X","X","X","X","X"]},
-            {p:"GUASCA", k:124, i:70000, rg:90000, d:["X","","","","X"]},
-            {p:"COGUA", k:125, i:70000, rg:90000, d:"COORD"},
-            {p:"EL COLEGIO", k:128, i:70000, rg:90000, d:["","","","X",""]},
-            {p:"FÓMEQUE", k:134, i:70000, rg:90000, d:"COORD"},
-            {p:"LA MESA", k:134, i:70000, rg:90000, d:["","","","X",""]},
-            {p:"ALBÁN", k:134, i:70000, rg:90000, d:["","","","X",""]},
-            {p:"QUETAME", k:140, i:70000, rg:90000, d:"COORD"},
-            {p:"LA VEGA", k:144, i:70000, rg:90000, d:["","X","","",""]},
-            {p:"GUAYABAL SÍQUIMA", k:144, i:70000, rg:90000, d:["","X","","",""]},
-            {p:"NEMOCÓN", k:145, i:70000, rg:90000, d:"COORD"},
-            {p:"FOSCA", k:148, i:70000, rg:90000, d:"COORD"},
-            {p:"CACHIPAY", k:148, i:70000, rg:90000, d:["","","","X",""]},
-            {p:"GUATAVITA", k:150, i:70000, rg:90000, d:["X","","","","X"]},
-            {p:"SUESCA", k:152, i:70000, rg:90000, d:["","X","","X",""]},
-            {p:"FUSAGASUGÁ", k:152, i:50000, rg:50000, d:["X","X","X","X","X"]},
-            {p:"ANOLAIMA", k:154, i:70000, rg:90000, d:["","X","","",""]},
-            {p:"BITUIMA", k:162, i:70000, rg:90000, d:"COORD"},
-            {p:"SESQUILÉ", k:144, i:70000, rg:90000, d:["","X","","X",""]},
-            {p:"GUTIÉRREZ", k:170, i:70000, rg:260000, d:"COORD"},
-            {p:"GUAYABETAL", k:170, i:70000, rg:260000, d:["","","","",""]},
-            {p:"NOCAIMA", k:170, i:70000, rg:100000, d:["","X","","",""]},
-            {p:"CHINAUTA", k:175, i:50000, rg:70000, d:["X","X","X","X","X"]},
-            {p:"MACHETÁ", k:175, i:70000, rg:150000, d:"COORD"},
-            {p:"CHOCONTÁ", k:175, i:70000, rg:130000, d:"COORD"},
-            {p:"TAUSA", k:175, i:70000, rg:150000, d:"COORD"},
-            {p:"VIOTÁ", k:176, i:70000, rg:110000, d:["","","","X",""]},
-            {p:"PASCA", k:176, i:70000, rg:110000, d:["X","X","X","X","X"]},
-            {p:"VIANÍ", k:180, i:70000, rg:140000, d:"COORD"},
-            {p:"TIBACUY", k:180, i:50000, rg:80000, d:["","X","","","X"]},
-            {p:"SASAIMA", k:182, i:70000, rg:110000, d:["","X","","",""]},
-            {p:"QUIPILE", k:185, i:70000, rg:110000, d:"COORD"},
-            {p:"PACHO", k:186, i:70000, rg:190000, d:"COORD"},
-            {p:"MANTA", k:190, i:70000, rg:190000, d:"COORD"},
-            {p:"CUCUNUBÁ", k:190, i:70000, rg:190000, d:"COORD"},
-            {p:"SUPATÁ", k:194, i:70000, rg:110000, d:["","X","","",""]},
-            {p:"ARBELÁEZ", k:194, i:50000, rg:70000, d:["","X","","",""]},
-            {p:"VILLAPINZÓN", k:195, i:70000, rg:120000, d:"COORD"},
-            {p:"SUTATAUSA", k:195, i:70000, rg:120000, d:"COORD"},
-            {p:"GACHETÁ", k:200, i:70000, rg:260000, d:"COORD"},
-            {p:"VILLETA", k:204, i:70000, rg:120000, d:["","X","","",""]},
-            {p:"UBATÉ", k:205, i:70000, rg:120000, d:"COORD"},
-            {p:"NIMAIMA", k:210, i:70000, rg:120000, d:["","X","","",""]},
-            {p:"VERGARA", k:210, i:70000, rg:120000, d:["","X","","",""]},
-            {p:"SAN JUAN RIOSECO", k:210, i:70000, rg:260000, d:"COORD"},
-            {p:"TOBÍA", k:215, i:70000, rg:120000, d:["","X","","",""]},
-            {p:"QUEBRADANEGRA", k:215, i:70000, rg:220000, d:"COORD"},
-            {p:"FÚQUENE", k:215, i:70000, rg:220000, d:"COORD"},
-            {p:"GAMA", k:225, i:70000, rg:240000, d:"COORD"},
-            {p:"SAN BERNARDO", k:230, i:50000, rg:90000, d:["","X","","",""]},
-            {p:"LENGUAZAQUE", k:235, i:70000, rg:140000, d:"COORD"},
-            {p:"VILLAGÓMEZ", k:240, i:70000, rg:200000, d:"COORD"},
-            {p:"GUATEQUE", k:240, i:70000, rg:200000, d:"COORD"},
-            {p:"CHAGUANÍ", k:245, i:70000, rg:200000, d:"COORD"},
-            {p:"GUACHETÁ", k:245, i:70000, rg:200000, d:"COORD"},
-            {p:"SUSA", k:245, i:70000, rg:150000, d:"COORD"},
-            {p:"ÚTICA", k:246, i:70000, rg:150000, d:["","X","","",""]},
-            {p:"SIMIJACA", k:255, i:70000, rg:150000, d:"COORD"},
-            {p:"GUADUAS", k:258, i:70000, rg:150000, d:["","X","","",""]},
-            {p:"VENTAQUEMADA", k:260, i:0, rg:0, d:"COORD"},
-            {p:"UBALÁ", k:280, i:70000, rg:230000, d:"COORD"},
-            {p:"LA PALMA", k:290, i:70000, rg:230000, d:"COORD"},
-            {p:"GACHALÁ", k:305, i:70000, rg:250000, d:"COORD"},
-            {p:"CHIQUINQUIRÁ", k:315, i:70000, rg:220000, d:"COORD"},
-            {p:"GARAGOA", k:320, i:70000, rg:250000, d:"COORD"},
-            {p:"TUNJA", k:335, i:0, rg:0, d:"COORD"},
-            {p:"SUTAMARCHÁN", k:365, i:0, rg:80000, d:"COORD"},
-            {p:"VILLA DE LEYVA", k:380, i:0, rg:100000, d:"COORD"},
-            {p:"PAIPA", k:420, i:0, rg:0, d:"COORD"},
-            {p:"DUITAMA", k:450, i:0, rg:0, d:"COORD"},
-            {p:"SOGAMOSO", k:480, i:0, rg:0, d:"COORD"},
-            {p:"PANDI", k:224, i:50000, rg:80000, d:"COORD"},
-            {p:"TIBASOSA", k:401, i:0, rg:0, d:"COORD"},
-            {p:"NOBSA", k:414, i:0, rg:0, d:"COORD"},
-            {p:"CÓMBITA", k:138, i:0, rg:0, d:"COORD"},
-            {p:"TUTA", k:330, i:0, rg:0, d:"COORD"},
-            {p:"CORRALES", k:448, i:0, rg:0, d:"COORD"},
-            {p:"MONGUÍ", k:444, i:0, rg:0, d:"COORD"},
-            {p:"RÁQUIRA", k:334, i:0, rg:0, d:"COORD"},
-            {p:"RAMIRIQUÍ", k:302, i:0, rg:0, d:"COORD"},
-            {p:"PAUNA", k:350, i:70000, rg:240000, d:"COORD"}
-        ];
-
-        // Ordenar alfabéticamente
-        viaticosData.sort((a, b) => a.p.localeCompare(b.p));
-
-        const formatMoney = (val) => {
-            if (val === 0) return "$ 0";
-            return new Intl.NumberFormat('es-CO', { 
-                style: 'currency', 
-                currency: 'COP', 
-                maximumFractionDigits: 0 
-            }).format(val);
-        };
-
-        function renderViaticosTecnicos(list) {
-            const body = document.getElementById('viaticos-body');
-            if (!body) return;
-            
-            body.innerHTML = "";
-            
-            if (list.length === 0) {
-                body.innerHTML = `
-                    <tr>
-                        <td colspan="9" class="p-8 text-center text-slate-400">
-                            No se encontraron resultados
-                        </td>
-                    </tr>
-                `;
-                return;
-            }
-            
-            list.forEach(item => {
-                const tr = document.createElement('tr');
-                tr.className = "table-row-hover";
-                
-                let daysHtml = "";
-                if (item.d === "COORD") {
-                    daysHtml = `<td colspan="5" class="p-4 text-center font-black bg-amber-50 text-amber-800 text-xs uppercase tracking-wider">Coordinar con ASC</td>`;
-                } else {
-                    daysHtml = item.d.map(dia => {
-                        const val = (dia.toLowerCase() === "x") ? `<span class="inline-block bg-green-500 text-white font-black text-xs px-2.5 py-1 rounded-md">X</span>` : "";
-                        return `<td class="px-3 py-3 text-center">${val}</td>`;
-                    }).join('');
-                }
-                
-                tr.innerHTML = `
-                    <td class="px-6 py-4 font-bold text-slate-800">${item.p}</td>
-                    <td class="px-4 py-4 text-center text-slate-500 font-medium">${item.k} KM</td>
-                    <td class="px-4 py-4 text-center font-black text-green-600">${formatMoney(item.i)}</td>
-                    <td class="px-4 py-4 text-center font-black text-blue-600">${formatMoney(item.rg)}</td>
-                    ${daysHtml}
-                `;
-                
-                body.appendChild(tr);
-            });
-        }
-
-       function filterViaticos() {
-    const query = document.getElementById('searchViaticos').value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    // Cambiamos viaticosData por viaticosTecnicosData
-    const filtered = viaticosTecnicosData.filter(item => 
-        item.p.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query)
-    );
-    // Cambiamos renderViaticos por renderViaticosTecnicos
-    renderViaticosTecnicos(filtered);
-}
-
-        function switchTabTecnicos(tab) {
-            const tabGarantias = document.getElementById('tab-garantias');
-            const tabOow = document.getElementById('tab-oow');
-            const tabViaticos = document.getElementById('tab-viaticos');
-            const btnGarantias = document.getElementById('btn-garantias');
-            const btnOow = document.getElementById('btn-oow');
-            const btnViaticos = document.getElementById('btn-viaticos');
-
-            // Ocultar todos
-            tabGarantias.classList.add('hidden');
-            tabOow.classList.add('hidden');
-            tabViaticos.classList.add('hidden');
-            
-            // Desactivar todos los botones
-            btnGarantias.classList.remove('tab-active');
-            btnGarantias.classList.add('tab-inactive');
-            btnOow.classList.remove('tab-active');
-            btnOow.classList.add('tab-inactive');
-            btnViaticos.classList.remove('tab-active');
-            btnViaticos.classList.add('tab-inactive');
-
-            if (tab === 'garantias') {
-                tabGarantias.classList.remove('hidden');
-                btnGarantias.classList.add('tab-active');
-                btnGarantias.classList.remove('tab-inactive');
-            } else if (tab === 'oow') {
-                tabOow.classList.remove('hidden');
-                btnOow.classList.add('tab-active');
-                btnOow.classList.remove('tab-inactive');
-            } else if (tab === 'viaticos') {
-                tabViaticos.classList.remove('hidden');
-                btnViaticos.classList.add('tab-active');
-                btnViaticos.classList.remove('tab-inactive');
-                // Renderizar viáticos cuando se abre la pestaña
-                renderViaticos(viaticosTecnicosData);
-            }
-            
-            // Scroll suave al inicio
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-        // Animación de entrada
- 
-
-</section>
 </main>
 
 <!-- Modal zoom imágenes -->
@@ -1897,6 +1538,229 @@
         });
     }
 
+
+    // ── TARIFAS TÉCNICOS (Estatuto 2026) ──────────────────────
+        const viaticosDataTec = [
+            {p:"SIBERIA", k:38, i:25000, rg:25000, d:["","X","","X",""]},
+            {p:"LA CALERA", k:56, i:35000, rg:35000, d:["X","","","","X"]},
+            {p:"SIBATÉ", k:58, i:30000, rg:30000, d:["","","","X",""]},
+            {p:"MOSQUERA", k:58, i:30000, rg:30000, d:["X","X","X","X","X"]},
+            {p:"GUAYMARAL", k:62, i:30000, rg:30000, d:["","","","",""]},
+            {p:"ARRAYANES", k:62, i:30000, rg:30000, d:["","","X","","X"]},
+            {p:"FUNZA", k:62, i:30000, rg:30000, d:["X","X","X","X","X"]},
+            {p:"MADRID", k:68, i:30000, rg:30000, d:["X","X","X","X","X"]},
+            {p:"COTA", k:70, i:30000, rg:30000, d:["X","","X","","X"]},
+            {p:"CHIPAQUE", k:70, i:35000, rg:35000, d:"COORD"},
+            {p:"CHÍA", k:74, i:30000, rg:30000, d:["X","X","X","X","X"]},
+            {p:"EL ROSAL", k:78, i:40000, rg:40000, d:["","X","","X",""]},
+            {p:"TENJO", k:82, i:40000, rg:40000, d:["","X","","X",""]},
+            {p:"BOJACÁ", k:84, i:40000, rg:40000, d:["X","","X","","X"]},
+            {p:"CAJICÁ", k:86, i:40000, rg:40000, d:["X","X","X","X","X"]},
+            {p:"TABIO", k:88, i:45000, rg:45000, d:["","X","","X",""]},
+            {p:"SAN ANTONIO TEQUENDAMA", k:88, i:45000, rg:45000, d:["","","","X",""]},
+            {p:"GRANADA CUNDI", k:88, i:50000, rg:50000, d:["","","","X",""]},
+            {p:"BRICEÑO", k:92, i:45000, rg:45000, d:["X","","","","X"]},
+            {p:"FACATATIVÁ", k:92, i:40000, rg:40000, d:["X","X","X","X","X"]},
+            {p:"SUBACHOQUE", k:96, i:45000, rg:45000, d:["","X","","",""]},
+            {p:"CHOACHÍ", k:98, i:58000, rg:58000, d:"COORD"},
+            {p:"CÁQUEZA", k:104, i:62000, rg:62000, d:"COORD"},
+            {p:"TOCANCIPÁ", k:105, i:50000, rg:50000, d:["X","X","X","X","X"]},
+            {p:"ZIPACÓN", k:105, i:50000, rg:50000, d:["","","","X",""]},
+            {p:"SOPÓ", k:108, i:55000, rg:55000, d:["X","","","","X"]},
+            {p:"ZIPAQUIRÁ", k:110, i:50000, rg:50000, d:["X","X","X","X","X"]},
+            {p:"SUBIA", k:110, i:50000, rg:50000, d:["","","","X",""]},
+            {p:"UNE", k:114, i:65000, rg:65000, d:"COORD"},
+            {p:"GACHANCIPÁ", k:116, i:60000, rg:60000, d:["","X","","X",""]},
+            {p:"SAN FRANCISCO", k:118, i:60000, rg:60000, d:["","X","","",""]},
+            {p:"UBAQUE", k:122, i:70000, rg:70000, d:"COORD"},
+            {p:"TENA", k:122, i:60000, rg:60000, d:["","","","X",""]},
+            {p:"SILVANIA", k:122, i:50000, rg:50000, d:["X","X","X","X","X"]},
+            {p:"GUASCA", k:124, i:70000, rg:90000, d:["X","","","","X"]},
+            {p:"COGUA", k:125, i:70000, rg:90000, d:"COORD"},
+            {p:"EL COLEGIO", k:128, i:70000, rg:90000, d:["","","","X",""]},
+            {p:"FÓMEQUE", k:134, i:70000, rg:90000, d:"COORD"},
+            {p:"LA MESA", k:134, i:70000, rg:90000, d:["","","","X",""]},
+            {p:"ALBÁN", k:134, i:70000, rg:90000, d:["","","","X",""]},
+            {p:"QUETAME", k:140, i:70000, rg:90000, d:"COORD"},
+            {p:"LA VEGA", k:144, i:70000, rg:90000, d:["","X","","",""]},
+            {p:"GUAYABAL SÍQUIMA", k:144, i:70000, rg:90000, d:["","X","","",""]},
+            {p:"NEMOCÓN", k:145, i:70000, rg:90000, d:"COORD"},
+            {p:"FOSCA", k:148, i:70000, rg:90000, d:"COORD"},
+            {p:"CACHIPAY", k:148, i:70000, rg:90000, d:["","","","X",""]},
+            {p:"GUATAVITA", k:150, i:70000, rg:90000, d:["X","","","","X"]},
+            {p:"SUESCA", k:152, i:70000, rg:90000, d:["","X","","X",""]},
+            {p:"FUSAGASUGÁ", k:152, i:50000, rg:50000, d:["X","X","X","X","X"]},
+            {p:"ANOLAIMA", k:154, i:70000, rg:90000, d:["","X","","",""]},
+            {p:"BITUIMA", k:162, i:70000, rg:90000, d:"COORD"},
+            {p:"SESQUILÉ", k:144, i:70000, rg:90000, d:["","X","","X",""]},
+            {p:"GUTIÉRREZ", k:170, i:70000, rg:260000, d:"COORD"},
+            {p:"GUAYABETAL", k:170, i:70000, rg:260000, d:["","","","",""]},
+            {p:"NOCAIMA", k:170, i:70000, rg:100000, d:["","X","","",""]},
+            {p:"CHINAUTA", k:175, i:50000, rg:70000, d:["X","X","X","X","X"]},
+            {p:"MACHETÁ", k:175, i:70000, rg:150000, d:"COORD"},
+            {p:"CHOCONTÁ", k:175, i:70000, rg:130000, d:"COORD"},
+            {p:"TAUSA", k:175, i:70000, rg:150000, d:"COORD"},
+            {p:"VIOTÁ", k:176, i:70000, rg:110000, d:["","","","X",""]},
+            {p:"PASCA", k:176, i:70000, rg:110000, d:["X","X","X","X","X"]},
+            {p:"VIANÍ", k:180, i:70000, rg:140000, d:"COORD"},
+            {p:"TIBACUY", k:180, i:50000, rg:80000, d:["","X","","","X"]},
+            {p:"SASAIMA", k:182, i:70000, rg:110000, d:["","X","","",""]},
+            {p:"QUIPILE", k:185, i:70000, rg:110000, d:"COORD"},
+            {p:"PACHO", k:186, i:70000, rg:190000, d:"COORD"},
+            {p:"MANTA", k:190, i:70000, rg:190000, d:"COORD"},
+            {p:"CUCUNUBÁ", k:190, i:70000, rg:190000, d:"COORD"},
+            {p:"SUPATÁ", k:194, i:70000, rg:110000, d:["","X","","",""]},
+            {p:"ARBELÁEZ", k:194, i:50000, rg:70000, d:["","X","","",""]},
+            {p:"VILLAPINZÓN", k:195, i:70000, rg:120000, d:"COORD"},
+            {p:"SUTATAUSA", k:195, i:70000, rg:120000, d:"COORD"},
+            {p:"GACHETÁ", k:200, i:70000, rg:260000, d:"COORD"},
+            {p:"VILLETA", k:204, i:70000, rg:120000, d:["","X","","",""]},
+            {p:"UBATÉ", k:205, i:70000, rg:120000, d:"COORD"},
+            {p:"NIMAIMA", k:210, i:70000, rg:120000, d:["","X","","",""]},
+            {p:"VERGARA", k:210, i:70000, rg:120000, d:["","X","","",""]},
+            {p:"SAN JUAN RIOSECO", k:210, i:70000, rg:260000, d:"COORD"},
+            {p:"TOBÍA", k:215, i:70000, rg:120000, d:["","X","","",""]},
+            {p:"QUEBRADANEGRA", k:215, i:70000, rg:220000, d:"COORD"},
+            {p:"FÚQUENE", k:215, i:70000, rg:220000, d:"COORD"},
+            {p:"GAMA", k:225, i:70000, rg:240000, d:"COORD"},
+            {p:"SAN BERNARDO", k:230, i:50000, rg:90000, d:["","X","","",""]},
+            {p:"LENGUAZAQUE", k:235, i:70000, rg:140000, d:"COORD"},
+            {p:"VILLAGÓMEZ", k:240, i:70000, rg:200000, d:"COORD"},
+            {p:"GUATEQUE", k:240, i:70000, rg:200000, d:"COORD"},
+            {p:"CHAGUANÍ", k:245, i:70000, rg:200000, d:"COORD"},
+            {p:"GUACHETÁ", k:245, i:70000, rg:200000, d:"COORD"},
+            {p:"SUSA", k:245, i:70000, rg:150000, d:"COORD"},
+            {p:"ÚTICA", k:246, i:70000, rg:150000, d:["","X","","",""]},
+            {p:"SIMIJACA", k:255, i:70000, rg:150000, d:"COORD"},
+            {p:"GUADUAS", k:258, i:70000, rg:150000, d:["","X","","",""]},
+            {p:"VENTAQUEMADA", k:260, i:0, rg:0, d:"COORD"},
+            {p:"UBALÁ", k:280, i:70000, rg:230000, d:"COORD"},
+            {p:"LA PALMA", k:290, i:70000, rg:230000, d:"COORD"},
+            {p:"GACHALÁ", k:305, i:70000, rg:250000, d:"COORD"},
+            {p:"CHIQUINQUIRÁ", k:315, i:70000, rg:220000, d:"COORD"},
+            {p:"GARAGOA", k:320, i:70000, rg:250000, d:"COORD"},
+            {p:"TUNJA", k:335, i:0, rg:0, d:"COORD"},
+            {p:"SUTAMARCHÁN", k:365, i:0, rg:80000, d:"COORD"},
+            {p:"VILLA DE LEYVA", k:380, i:0, rg:100000, d:"COORD"},
+            {p:"PAIPA", k:420, i:0, rg:0, d:"COORD"},
+            {p:"DUITAMA", k:450, i:0, rg:0, d:"COORD"},
+            {p:"SOGAMOSO", k:480, i:0, rg:0, d:"COORD"},
+            {p:"PANDI", k:224, i:50000, rg:80000, d:"COORD"},
+            {p:"TIBASOSA", k:401, i:0, rg:0, d:"COORD"},
+            {p:"NOBSA", k:414, i:0, rg:0, d:"COORD"},
+            {p:"CÓMBITA", k:138, i:0, rg:0, d:"COORD"},
+            {p:"TUTA", k:330, i:0, rg:0, d:"COORD"},
+            {p:"CORRALES", k:448, i:0, rg:0, d:"COORD"},
+            {p:"MONGUÍ", k:444, i:0, rg:0, d:"COORD"},
+            {p:"RÁQUIRA", k:334, i:0, rg:0, d:"COORD"},
+            {p:"RAMIRIQUÍ", k:302, i:0, rg:0, d:"COORD"},
+            {p:"PAUNA", k:350, i:70000, rg:240000, d:"COORD"}
+        ];
+
+        // Ordenar alfabéticamente
+        viaticosDataTec.sort((a, b) => a.p.localeCompare(b.p));
+
+        const formatMoneyTec = (val) => {
+            if (val === 0) return "$ 0";
+            return new Intl.NumberFormat('es-CO', { 
+                style: 'currency', 
+                currency: 'COP', 
+                maximumFractionDigits: 0 
+            }).format(val);
+        };
+
+        function renderViaticosTec(list) {
+            const body = document.getElementById('viaticos-body-tec');
+            if (!body) return;
+            
+            body.innerHTML = "";
+            
+            if (list.length === 0) {
+                body.innerHTML = `
+                    <tr>
+                        <td colspan="9" class="p-8 text-center text-slate-400">
+                            No se encontraron resultados
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            list.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "tec-table-row-hover";
+                
+                let daysHtml = "";
+                if (item.d === "COORD") {
+                    daysHtml = `<td colspan="5" class="p-4 text-center font-black bg-amber-50 text-amber-800 text-xs uppercase tracking-wider">Coordinar con ASC</td>`;
+                } else {
+                    daysHtml = item.d.map(dia => {
+                        const val = (dia.toLowerCase() === "x") ? `<span class="inline-block bg-green-500 text-white font-black text-xs px-2.5 py-1 rounded-md">X</span>` : "";
+                        return `<td class="px-3 py-3 text-center">${val}</td>`;
+                    }).join('');
+                }
+                
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-bold text-slate-800">${item.p}</td>
+                    <td class="px-4 py-4 text-center text-slate-500 font-medium">${item.k} KM</td>
+                    <td class="px-4 py-4 text-center font-black text-green-600">${formatMoneyTec(item.i)}</td>
+                    <td class="px-4 py-4 text-center font-black text-blue-600">${formatMoneyTec(item.rg)}</td>
+                    ${daysHtml}
+                `;
+                
+                body.appendChild(tr);
+            });
+        }
+
+        function filterViaticosTec() {
+            const query = document.getElementById('searchViaticosTec').value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            const filtered = viaticosDataTec.filter(item => 
+                item.p.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query)
+            );
+            renderViaticosTec(filtered);
+        }
+
+        function switchTabTec(tab) {
+            const tabGarantias = document.getElementById('tab-garantias-tec');
+            const tabOow = document.getElementById('tab-oow-tec');
+            const tabViaticos = document.getElementById('tab-viaticos-tec');
+            const btnGarantias = document.getElementById('btn-garantias-tec');
+            const btnOow = document.getElementById('btn-oow-tec');
+            const btnViaticos = document.getElementById('btn-viaticos-tec');
+
+            // Ocultar todos
+            tabGarantias.classList.add('hidden');
+            tabOow.classList.add('hidden');
+            tabViaticos.classList.add('hidden');
+            
+            // Desactivar todos los botones
+            btnGarantias.classList.remove('tec-tab-active');
+            btnGarantias.classList.add('tec-tab-inactive');
+            btnOow.classList.remove('tec-tab-active');
+            btnOow.classList.add('tec-tab-inactive');
+            btnViaticos.classList.remove('tec-tab-active');
+            btnViaticos.classList.add('tec-tab-inactive');
+
+            if (tab === 'garantias') {
+                tabGarantias.classList.remove('hidden');
+                btnGarantias.classList.add('tec-tab-active');
+                btnGarantias.classList.remove('tec-tab-inactive');
+            } else if (tab === 'oow') {
+                tabOow.classList.remove('hidden');
+                btnOow.classList.add('tec-tab-active');
+                btnOow.classList.remove('tec-tab-inactive');
+            } else if (tab === 'viaticos') {
+                tabViaticos.classList.remove('hidden');
+                btnViaticos.classList.add('tec-tab-active');
+                btnViaticos.classList.remove('tec-tab-inactive');
+                // Renderizar viáticos cuando se abre la pestaña
+                renderViaticosTec(viaticosDataTec);
+            }
+            
+            // Scroll suave al inicio
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
    window.onload = () => {
         try { renderTarifas(); renderViaticos(viaticosData); renderFiltros(); renderIndice(); showMainSection('inicio'); }
         catch(e) { console.error(e); }
@@ -1910,7 +1774,8 @@ function renderIndice() {
         {id:'calculadora', icon:'🧮', label:'Calculadora de Repuestos'},
         {id:'filtros', icon:'🔧', label:'Catálogo de Filtros'},
         {id:'pagos', icon:'💳', label:'Medios de Pago'},
-        {id:'inspeccion', icon:'🚗', label:'Inspección Vehículos'}
+        {id:'inspeccion', icon:'🚗', label:'Inspección Vehículos'},
+        {id:'tarifas_tecnicos', icon:'🛠️', label:'Tarifas Técnicos'}
     ];
     grid.innerHTML = items.map(i => `<div class="indice-card" onclick="showMainSection('${i.id}')"><div class="indice-icon">${i.icon}</div><div class="indice-label">${i.label}</div></div>`).join('');
 }
