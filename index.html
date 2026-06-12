@@ -443,13 +443,13 @@
     <!-- Sección de Tarifas -->
     <section id="section-tarifario" class="hidden">
         <div id="tab-container" class="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar" role="tablist">
-            <button onclick="switchTab('mantenimientos')" id="tab-mantenimientos" class="btn-tab active" role="tab">Mantenimientos</button>
-            <button onclick="switchTab('inst_general')" id="tab-inst_general" class="btn-tab" role="tab">Instalación General</button>
-            <button onclick="switchTab('inst_kit')" id="tab-inst_kit" class="btn-tab" role="tab">Instalación con Kit</button>
-            <button onclick="switchTab('inst_tv')" id="tab-inst_tv" class="btn-tab" role="tab">Instalación Televisores</button>
-            <button onclick="switchTab('diag')" id="tab-diag" class="btn-tab" role="tab">Diagnósticos</button>
-            <button onclick="switchTab('mo_general')" id="tab-mo_general" class="btn-tab" role="tab">Mano de Obra</button>
-            <button onclick="switchTab('mo_compresor')" id="tab-mo_compresor" class="btn-tab" role="tab">Cambio de Compresor</button>
+            <button onclick="switchTabTecnicos('mantenimientos')" id="tab-mantenimientos" class="btn-tab active" role="tab">Mantenimientos</button>
+            <button onclick="switchTabTecnicos('inst_general')" id="tab-inst_general" class="btn-tab" role="tab">Instalación General</button>
+            <button onclick="switchTabTecnicos('inst_kit')" id="tab-inst_kit" class="btn-tab" role="tab">Instalación con Kit</button>
+            <button onclick="switchTabTecnicos('inst_tv')" id="tab-inst_tv" class="btn-tab" role="tab">Instalación Televisores</button>
+            <button onclick="switchTabTecnicos('diag')" id="tab-diag" class="btn-tab" role="tab">Diagnósticos</button>
+            <button onclick="switchTabTecnicos('mo_general')" id="tab-mo_general" class="btn-tab" role="tab">Mano de Obra</button>
+            <button onclick="switchTabTecnicos('mo_compresor')" id="tab-mo_compresor" class="btn-tab" role="tab">Cambio de Compresor</button>
         </div>
         <div id="tarifas-render"></div>
     </section>
@@ -1538,7 +1538,7 @@
     renderViaticosTecnicos(filtered);
 }
 
-        function switchTab(tab) {
+        function switchTabTecnicos(tab) {
             const tabGarantias = document.getElementById('tab-garantias');
             const tabOow = document.getElementById('tab-oow');
             const tabViaticos = document.getElementById('tab-viaticos');
@@ -1580,13 +1580,7 @@
         }
         
         // Animación de entrada
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            }, 100);
-        });
+ 
 
 </section>
 </main>
